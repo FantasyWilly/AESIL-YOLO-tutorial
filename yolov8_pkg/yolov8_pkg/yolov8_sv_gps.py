@@ -70,7 +70,7 @@ class VideoCapture:
 # -----------------------------------------
 class YoloRtspRosNode(Node):
     def __init__(self):
-        super().__init__('yolov8_sv_node')
+        super().__init__('yolov8_sv_gps_node')
         # **QoS**
         qos=QoSProfile(
 			reliability=ReliabilityPolicy(0),
