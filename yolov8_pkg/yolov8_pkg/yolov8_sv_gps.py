@@ -121,7 +121,7 @@ class YoloRtspRosNode(Node):
         # **一般而言，飛機經緯度資訊會從 "/mavros/global_position/global" 主題發佈**
         self.gps_sub = self.create_subscription(
             NavSatFix,
-            "/mavros/global_position/global",
+            "/target_position",
             self.gps_callback,
             qos_profile=qos
         )
@@ -253,7 +253,7 @@ class YoloRtspRosNode(Node):
 
                 # **根據每個追蹤結果生成標籤字串 - 飛機的經緯度資訊**
                 labels = [
-                    f"#{tracker_id} {self.model.names[int(cls)]} - [{gps[0]:.6f}, {gps[1]:.6f}]"
+                    f"#{tracker_id} {self.model.names[int(cls)]} - [{gps[0]:.7f}, {gps[1]:.7f}]"
                     for cls, tracker_id in zip(detections.class_id, detections.tracker_id)
                 ]
 
