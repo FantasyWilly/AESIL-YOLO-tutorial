@@ -30,6 +30,7 @@ setup(
             'yolov8_mod_node = yolov8_pkg.yolov8_mod:main',
             'yolov8_sv_node = yolov8_pkg.yolov8_sv:main',
             'yolov8_sv_gps_node = yolov8_pkg.yolov8_sv_gps:main',
+            'yolov8_sv_gps_save_node = yolov8_pkg.yolov8_sv_gps_save:main',
         ],
     },
 )
